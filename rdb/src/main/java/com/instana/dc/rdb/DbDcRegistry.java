@@ -8,6 +8,7 @@ import com.instana.dc.DcException;
 import com.instana.dc.rdb.impl.DamengDc;
 import com.instana.dc.rdb.impl.InformixDc;
 import com.instana.dc.rdb.impl.Oceanbase4Dc;
+import com.instana.dc.rdb.impl.mssql.MssqlDc;
 import com.instana.dc.rdb.impl.saphana.HanaDc;
 
 import java.util.HashMap;
@@ -21,6 +22,7 @@ public class DbDcRegistry {
         put("DAMENG", DamengDc.class);
         put("INFORMIX", InformixDc.class);
         put("OCEANBASE4", Oceanbase4Dc.class);
+        put("MSSQL", MssqlDc.class);
     }};
 
     public Class<? extends AbstractDbDc> findDatabaseDc(String dbSystem) throws DcException {

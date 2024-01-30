@@ -34,7 +34,8 @@ public class DataCollector {
         ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
         String configFile = System.getenv(CONFIG_ENV);
         if (configFile == null) {
-            configFile = CONFIG_YAML;
+//            configFile = CONFIG_YAML;
+            configFile = "/Users/vivekmahalingam/Documents/otel-poc/otel-database-dc/rdb/config/config-mssql.yaml";
         }
         dcConfig = objectMapper.readValue(new File(configFile), CustomDcConfig.class);
         int n = dcConfig.getInstances().size();
